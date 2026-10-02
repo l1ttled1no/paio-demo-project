@@ -1,0 +1,9 @@
+{
+  "$schema": "https://autosar.io/schemas/ecuc-module-config.schema.json",
+  "module": {
+    "name": "HPC_ECU_0",
+    "definition": "HPC_ECU",
+    "containers": [],
+    "implementation-config-variant": "RECOMMENDED-CONFIGURATION"
+  }
+}

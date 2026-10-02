@@ -1,0 +1,61 @@
+{
+  "$schema": "https://autosar.io/schemas/swc.schema.json",
+  "version": "1.0.0",
+  "name": "IVIApp",
+  "type": "adaptive-application",
+  "ports": [
+    {
+      "name": "RPort_0",
+      "direction": "required",
+      "port-interface": "MainApp2IVI",
+      "port-interface-category": "service"
+    },
+    {
+      "name": "RPort_Logging_IVI",
+      "direction": "required",
+      "port-interface": "Logging_and_Tracing",
+      "port-interface-category": "log-and-trace"
+    }
+  ],
+  "internal-behavior": {
+    "runnable-entities": [],
+    "rte-events": [],
+    "canvas-size": {
+      "width": 198,
+      "height": 146
+    },
+    "port-positions": {
+      "RPort_0": {
+        "x": 0,
+        "y": 50
+      },
+      "RPort_Logging_IVI": {
+        "x": 198,
+        "y": 48
+      }
+    }
+  },
+  "executable": {
+    "name": "IVI",
+    "root-swc-prototype": "AA",
+    "version": "1.0.0",
+    "category": "APPLICATION_LEVEL",
+    "reporting-behavior": "REPORTS-EXECUTION-STATE"
+  },
+  "dlt-sink-mappings": [
+    {
+      "name": "IVI_AA_RPort_Logging_IVI",
+      "port-ref": "RPort_Logging_IVI",
+      "dlt-context-ref": "",
+      "instance-type": "log",
+      "position": {
+        "x": 67.20363329277664,
+        "y": 77.62670310598905
+      },
+      "size": {
+        "width": 82.47679353932865,
+        "height": 36.93778385099817
+      }
+    }
+  ]
+}

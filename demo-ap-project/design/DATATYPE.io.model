@@ -1,0 +1,99 @@
+{
+  "$schema": "https://autosar.io/schemas/datatype.schema.json",
+  "version": "2.0.0",
+  "type": "PAIO-datatype",
+  "created-at": "2026-09-29T17:20:43.832Z",
+  "modified-at": "2026-09-29T17:41:03.784Z",
+  "metadata": {},
+  "data-types": {
+    "data-type": [
+      {
+        "short-name": "VehicleGearState_enm",
+        "category": "ENUMERATION",
+        "type-reference-ref": "uint8",
+        "name-space": "sensor::gearstate",
+        "enumeration-literals": [
+          {
+            "name": "VehGearState_Parking_enm",
+            "value": 0
+          },
+          {
+            "name": "VehGearState_Reverse_enm",
+            "value": 1
+          },
+          {
+            "name": "VehGearState_Neutral_enm",
+            "value": 2
+          },
+          {
+            "name": "VehGearState_Drive_enm",
+            "value": 3
+          },
+          {
+            "name": "VehGearState_Invalid_enm",
+            "value": 4
+          }
+        ]
+      },
+      {
+        "short-name": "AirSuspensionSate_enm",
+        "category": "ENUMERATION",
+        "type-reference-ref": "uint8",
+        "enumeration-literals": [
+          {
+            "name": "AirSuspensionState_VeryHigh_enm",
+            "value": 0
+          },
+          {
+            "name": "AirSuspensionState_High_enm",
+            "value": 1
+          },
+          {
+            "name": "AirSuspensionState_Normal_enm",
+            "value": 2
+          },
+          {
+            "name": "AirSuspensionState_Low_enm",
+            "value": 3
+          },
+          {
+            "name": "AirSuspensionState_VeryLow_enm",
+            "value": 4
+          },
+          {
+            "name": "AirSuspensionState_None_enm",
+            "value": 5
+          },
+          {
+            "name": "AirSuspensionState_Invalid_enm",
+            "value": 6
+          }
+        ],
+        "name-space": "sensor::airstate"
+      },
+      {
+        "short-name": "VehStatus_struct",
+        "category": "STRUCTURE",
+        "name-space": "sensor::vehstatus",
+        "sub-elements": [
+          {
+            "short-name": "GearState_enm",
+            "type-ref": "VehicleGearState_enm",
+            "is-optional": false
+          },
+          {
+            "short-name": "AirState_enm",
+            "type-ref": "AirSuspensionSate_enm",
+            "is-optional": false
+          },
+          {
+            "short-name": "isVehStateValid_bl",
+            "type-ref": "boolean",
+            "is-optional": false
+          }
+        ]
+      }
+    ],
+    "units": []
+  }
+}

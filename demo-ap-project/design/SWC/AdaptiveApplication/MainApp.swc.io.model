@@ -1,0 +1,78 @@
+{
+  "$schema": "https://autosar.io/schemas/swc.schema.json",
+  "version": "1.0.0",
+  "name": "MainApp",
+  "type": "adaptive-application",
+  "ports": [
+    {
+      "name": "PPort_0",
+      "direction": "provided",
+      "port-interface": "MainApp2IVI",
+      "port-interface-category": "service"
+    },
+    {
+      "name": "RPort_0",
+      "direction": "required",
+      "port-interface": "GearSensor2MainApp",
+      "port-interface-category": "service",
+      "com-specs": [
+        {
+          "type": "client",
+          "operation": "GearSensor2MainApp/Method_0",
+          "e2e-call-response-timeout": 0
+        }
+      ]
+    },
+    {
+      "name": "RPort_Logging_MainApp",
+      "direction": "required",
+      "port-interface": "Logging_and_Tracing",
+      "port-interface-category": "log-and-trace"
+    }
+  ],
+  "internal-behavior": {
+    "runnable-entities": [],
+    "rte-events": [],
+    "canvas-size": {
+      "width": 237,
+      "height": 177
+    },
+    "port-positions": {
+      "PPort_0": {
+        "x": 237,
+        "y": 137
+      },
+      "RPort_0": {
+        "x": 237,
+        "y": 40
+      },
+      "RPort_Logging_MainApp": {
+        "x": 237,
+        "y": 112
+      }
+    }
+  },
+  "executable": {
+    "name": "MainApp",
+    "root-swc-prototype": "AA",
+    "version": "1.0.0",
+    "category": "APPLICATION_LEVEL",
+    "reporting-behavior": "REPORTS-EXECUTION-STATE"
+  },
+  "dlt-sink-mappings": [
+    {
+      "name": "MainApp_AA_RPort_Logging_MainApp",
+      "port-ref": "RPort_Logging_MainApp",
+      "dlt-context-ref": "",
+      "instance-type": "log",
+      "position": {
+        "x": 19.242642981107117,
+        "y": 87.99604919308521
+      },
+      "size": {
+        "width": 160,
+        "height": 32
+      }
+    }
+  ]
+}

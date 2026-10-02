@@ -1,0 +1,143 @@
+{
+  "$schema": "https://autosar.io/schemas/ivc.schema.json",
+  "version": "1.0.0",
+  "metadata": {
+    "name": "IVC",
+    "created": "2026-09-29T13:14:45.379Z",
+    "modified": "2026-09-29T17:58:11.285Z",
+    "_viewport": {
+      "x": -858.8482186503334,
+      "y": -332.09972245001154,
+      "zoom": 2.225540928492469
+    }
+  },
+  "ivc": {
+    "hpcs": [
+      {
+        "name": "HPC_0",
+        "node-type": "hpc",
+        "comm-controllers": [
+          {
+            "name": "HPC_0_Ethernet_Controller_0",
+            "type": "ethernet",
+            "position": {
+              "x": 148.9574127016425,
+              "y": 45.39194756940668
+            }
+          }
+        ],
+        "connectors": [
+          {
+            "name": "HPC_0_Ethernet_Connector_0",
+            "controller": "HPC_0_Ethernet_Controller_0",
+            "position": {
+              "boundary": "top",
+              "offset": 159.83637329841065
+            },
+            "type": "ethernet",
+            "unicast-ipv4-address": "",
+            "ip-v4-address-source": "FIXED",
+            "multicast-ipv4-address": "192.168.10.10",
+            "multicast-port": 50,
+            "application-endpoints": [
+              {
+                "type": "udp",
+                "name": "HPC_0_HPC_0_Ethernet_Connector_0_UDP_0",
+                "port-number": 0
+              }
+            ],
+            "service-instances": [
+              {
+                "instance-type": "someip",
+                "instance-ref": "Provider_GearSensor2MainApp_1",
+                "role": "provider"
+              },
+              {
+                "instance-type": "someip",
+                "instance-ref": "Provider_MainApp2IVI_1",
+                "role": "provider"
+              },
+              {
+                "instance-type": "someip",
+                "instance-ref": "Consumer_MainApp2IVI_1",
+                "role": "consumer"
+              },
+              {
+                "instance-type": "someip",
+                "instance-ref": "Consumer_GearSensor2MainApp_1",
+                "role": "consumer"
+              }
+            ]
+          }
+        ],
+        "position": {
+          "x": 740,
+          "y": 400
+        },
+        "size": {
+          "width": 240,
+          "height": 160
+        }
+      }
+    ],
+    "ecus": [],
+    "communication-clusters": [
+      {
+        "name": "EthernetCluster_0",
+        "physical-channels": [
+          {
+            "name": "PhysicalChannel",
+            "connected-connectors": [
+              {
+                "node": "HPC_0",
+                "connector": "HPC_0_Ethernet_Connector_0"
+              }
+            ]
+          }
+        ],
+        "position": {
+          "x": 980,
+          "y": 300
+        },
+        "type": "ethernet"
+      }
+    ],
+    "nm-config": {
+      "name": "NmConfig",
+      "nm-clusters": [
+        {
+          "name": "NmCluster_EthernetCluster_0",
+          "communication-cluster-ref": "EthernetCluster_0",
+          "nm-nodes": [
+            {
+              "name": "HPC_0",
+              "nm-if-ecu-ref": "HPC_0",
+              "controller-ref": "HPC_0_Ethernet_Controller_0",
+              "nm-node-id": 0,
+              "nm-msg-cycle-offset": 0,
+              "rx-nm-pdu-refs": [],
+              "tx-nm-pdu-refs": [],
+              "nm-node-type": "udp-nm",
+              "communication-connector-ref": "HPC_0_Ethernet_Connector_0",
+              "machine-ref": "HPC_0"
+            }
+          ],
+          "nm-msg-cycle-time": 0.5,
+          "nm-repeat-message-time": 1,
+          "nm-wait-bus-sleep-time": 1.5,
+          "nm-network-timeout": 2,
+          "nm-cluster-type": "udp-nm",
+          "nm-message-timeout-time": 2,
+          "nm-remote-sleep-indication-time": 1
+        }
+      ],
+      "nm-if-ecus": [
+        {
+          "name": "HPC_0",
+          "machine-ref": "HPC_0"
+        }
+      ],
+      "nm-cluster-couplings": []
+    }
+  }
+}

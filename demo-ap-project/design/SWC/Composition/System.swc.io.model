@@ -1,0 +1,14 @@
+{
+  "version": "1.0.0",
+  "name": "System",
+  "type": "composition",
+  "description": "Root SW Composition",
+  "ports": [],
+  "prototypes": [
+    {
+      "name": "HPC_0",
+      "swc-ref": "Composition/HPC_0"
+    }
+  ],
+  "connectors": []
+}

@@ -1,0 +1,101 @@
+{
+  "$schema": "https://autosar.io/schemas/interface.schema.json",
+  "version": "2.0.0",
+  "metadata": {
+    "name": "Interface Dictionary",
+    "created": "2026-09-29T17:15:59.004Z",
+    "modified": "2026-09-29T17:56:28.122Z"
+  },
+  "sender-receivers": [
+    {
+      "name": "MainApp2IVI_SR",
+      "data-elements": [
+        {
+          "name": "SendVehStatusEvent",
+          "type": "VehStatus_struct"
+        }
+      ],
+      "derived-by": "cp-soa",
+      "derivation-key": "cp-soa:MainApp2IVI:sr"
+    },
+    {
+      "name": "GearSensor2MainApp_SR",
+      "data-elements": [
+        {
+          "name": "GetVehicleStatus_Event",
+          "type": "VehStatus_struct"
+        }
+      ],
+      "derived-by": "cp-soa",
+      "derivation-key": "cp-soa:GearSensor2MainApp:sr"
+    }
+  ],
+  "client-servers": [
+    {
+      "name": "ClientServerInterface_0",
+      "operations": [],
+      "application-errors": []
+    }
+  ],
+  "service-interfaces": [
+    {
+      "name": "GearSensor2MainApp",
+      "major-version": 1,
+      "minor-version": 0,
+      "cpp-namespace": "comm::gear2main",
+      "events": [
+        {
+          "name": "GetVehicleStatus_Event",
+          "type": "VehStatus_struct",
+          "description": "Getting Vehicle Status from the GearSensor."
+        }
+      ],
+      "methods": [],
+      "fields": []
+    },
+    {
+      "name": "MainApp2IVI",
+      "major-version": 1,
+      "minor-version": 0,
+      "cpp-namespace": "comm::main2ivi",
+      "events": [
+        {
+          "name": "SendVehStatusEvent",
+          "type": "VehStatus_struct"
+        }
+      ],
+      "methods": [],
+      "fields": []
+    }
+  ],
+  "mode-switches": [],
+  "log-and-trace-interfaces": [
+    {
+      "name": "Logging_and_Tracing",
+      "cpp-namespace": "ara::log"
+    }
+  ],
+  "phm-supervision-recovery-notification-interfaces": [],
+  "state-management-interfaces": [],
+  "error-domains": [],
+  "phm-supervised-entity-interfaces": [],
+  "network-management-interfaces": [],
+  "sync-time-base-consumer-interfaces": [],
+  "sync-time-base-provider-interfaces": [],
+  "crypto-key-slot-interfaces": [],
+  "crypto-key-slot-client-interfaces": [],
+  "crypto-certificate-interfaces": [],
+  "crypto-certificate-group-interfaces": [],
+  "crypto-provider-interfaces": [],
+  "raw-data-stream-client-interfaces": [],
+  "raw-data-stream-server-interfaces": [],
+  "ieee1722-raw-data-stream-consumer-interfaces": [],
+  "ieee1722-raw-data-stream-producer-interfaces": [],
+  "persistency-key-value-storage-interfaces": [],
+  "persistency-file-storage-interfaces": [],
+  "security-event-report-interfaces": [],
+  "idsm-timestamp-provider-interfaces": [],
+  "idsm-context-provider-interfaces": [],
+  "idsm-reporting-mode-provider-interfaces": [],
+  "idsm-qualified-event-receiver-interfaces": []
+}

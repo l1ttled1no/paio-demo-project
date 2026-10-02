@@ -1,0 +1,210 @@
+{
+  "$schema": "https://autosar.io/schemas/ivc.schema.json",
+  "version": "1.0.0",
+  "metadata": {
+    "name": "IVC",
+    "created": "2026-10-02T06:56:58.861Z",
+    "modified": "2026-10-02T07:02:54.107Z",
+    "_viewport": {
+      "x": -19,
+      "y": 42,
+      "zoom": 1
+    }
+  },
+  "ivc": {
+    "hpcs": [],
+    "ecus": [
+      {
+        "name": "ECU_0",
+        "node-type": "ecu",
+        "sleep-mode-supported": false,
+        "wake-up-over-bus-supported": false,
+        "comm-controllers": [
+          {
+            "name": "ECU_0_Can_Controller_0",
+            "type": "can",
+            "enable-can-fd": false,
+            "position": {
+              "x": 57,
+              "y": 40
+            }
+          }
+        ],
+        "connectors": [
+          {
+            "name": "ECU_0_Can_Connector_0",
+            "controller": "ECU_0_Can_Controller_0",
+            "position": {
+              "boundary": "left",
+              "offset": 79
+            },
+            "type": "can"
+          }
+        ],
+        "position": {
+          "x": 560,
+          "y": 460
+        },
+        "size": {
+          "width": 240,
+          "height": 160
+        }
+      },
+      {
+        "name": "ECU_1",
+        "node-type": "ecu",
+        "sleep-mode-supported": false,
+        "wake-up-over-bus-supported": false,
+        "comm-controllers": [
+          {
+            "name": "ECU_1_Can_Controller_0",
+            "type": "can",
+            "enable-can-fd": false,
+            "position": {
+              "x": 85,
+              "y": 91
+            }
+          }
+        ],
+        "connectors": [
+          {
+            "name": "ECU_1_Can_Connector_0",
+            "controller": "ECU_1_Can_Controller_0",
+            "position": {
+              "boundary": "bottom",
+              "offset": 98
+            },
+            "type": "can"
+          }
+        ],
+        "position": {
+          "x": 240,
+          "y": 160
+        },
+        "size": {
+          "width": 240,
+          "height": 160
+        }
+      }
+    ],
+    "communication-clusters": [
+      {
+        "name": "CanCluster_0",
+        "physical-channels": [
+          {
+            "name": "PhysicalChannel",
+            "connected-connectors": [
+              {
+                "node": "ECU_0",
+                "connector": "ECU_0_Can_Connector_0"
+              },
+              {
+                "node": "ECU_1",
+                "connector": "ECU_1_Can_Connector_0"
+              }
+            ]
+          }
+        ],
+        "position": {
+          "x": 360,
+          "y": 500
+        },
+        "type": "can",
+        "baudrate": 500000
+      }
+    ],
+    "nm-config": {
+      "name": "NmConfig",
+      "nm-clusters": [
+        {
+          "name": "NmCluster_CanCluster_0",
+          "communication-cluster-ref": "CanCluster_0",
+          "nm-nodes": [
+            {
+              "name": "ECU_1",
+              "nm-if-ecu-ref": "ECU_1",
+              "controller-ref": "ECU_1_Can_Controller_0",
+              "nm-node-id": 0,
+              "nm-msg-cycle-offset": 0,
+              "rx-nm-pdu-refs": [],
+              "tx-nm-pdu-refs": [],
+              "nm-node-type": "can-nm"
+            },
+            {
+              "name": "ECU_0",
+              "nm-if-ecu-ref": "ECU_0",
+              "controller-ref": "ECU_0_Can_Controller_0",
+              "nm-node-id": 1,
+              "nm-msg-cycle-offset": 0,
+              "rx-nm-pdu-refs": [],
+              "tx-nm-pdu-refs": [],
+              "nm-node-type": "can-nm"
+            }
+          ],
+          "nm-msg-cycle-time": 0.5,
+          "nm-repeat-message-time": 1,
+          "nm-wait-bus-sleep-time": 1.5,
+          "nm-network-timeout": 2,
+          "nm-cluster-type": "can-nm",
+          "nm-busload-reduction-active": false,
+          "nm-immediate-nm-transmissions": 0,
+          "nm-message-timeout-time": 2,
+          "nm-remote-sleep-indication-time": 1
+        }
+      ],
+      "nm-if-ecus": [
+        {
+          "name": "ECU_0",
+          "ecu-instance-ref": "ECU_0"
+        },
+        {
+          "name": "ECU_1",
+          "ecu-instance-ref": "ECU_1"
+        }
+      ],
+      "nm-cluster-couplings": []
+    },
+    "tp-config": {
+      "name": "TpConfig",
+      "can-tp-configs": [
+        {
+          "name": "CanCluster_0_CanTpConfig",
+          "communication-cluster-ref": "CanCluster_0",
+          "addresses": [
+            {
+              "name": "ECU_0_TpAddr",
+              "tp-address": 0
+            },
+            {
+              "name": "ECU_1_TpAddr",
+              "tp-address": 0
+            }
+          ],
+          "channels": [],
+          "connections": [],
+          "ecus": [
+            {
+              "ecu-instance-ref": "ECU_0"
+            },
+            {
+              "ecu-instance-ref": "ECU_1"
+            }
+          ],
+          "nodes": [
+            {
+              "name": "ECU_0_CanTpNode",
+              "connector-ref": "ECU_0_Can_Connector_0",
+              "tp-address-ref": "ECU_0_TpAddr"
+            },
+            {
+              "name": "ECU_1_CanTpNode",
+              "connector-ref": "ECU_1_Can_Connector_0",
+              "tp-address-ref": "ECU_1_TpAddr"
+            }
+          ]
+        }
+      ],
+      "lin-tp-configs": []
+    }
+  }
+}

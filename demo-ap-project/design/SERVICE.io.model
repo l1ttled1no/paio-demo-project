@@ -1,0 +1,168 @@
+{
+  "$schema": "https://autosar.io/schemas/service.schema.json",
+  "version": "2.0.0",
+  "metadata": {
+    "name": "Service Model",
+    "created": "2026-09-29T17:54:21.158Z",
+    "modified": "2026-09-29T17:56:28.125Z"
+  },
+  "someip-service-interface-deployments": [
+    {
+      "name": "MainApp2IVI",
+      "interface": "MainApp2IVI",
+      "service-id": 1110,
+      "major-version": 1,
+      "minor-version": 0,
+      "event-deployments": [
+        {
+          "event": "SendVehStatusEvent",
+          "event-id": 1,
+          "transport": "udp"
+        }
+      ],
+      "method-deployments": [],
+      "field-deployments": [],
+      "event-groups": [
+        {
+          "id": 1,
+          "name": "EG_SendVehStatusEvent",
+          "events": [
+            "SendVehStatusEvent"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "GearSensor2MainApp",
+      "interface": "GearSensor2MainApp",
+      "service-id": 291,
+      "major-version": 1,
+      "minor-version": 0,
+      "event-deployments": [
+        {
+          "event": "GetVehicleStatus_Event",
+          "event-id": 1,
+          "transport": "udp"
+        }
+      ],
+      "method-deployments": [],
+      "field-deployments": [],
+      "event-groups": [
+        {
+          "id": 1,
+          "name": "EG_GetVehicleStatus_Event",
+          "events": [
+            "GetVehicleStatus_Event"
+          ]
+        }
+      ]
+    }
+  ],
+  "dds-service-interface-deployments": [],
+  "service-providers": {
+    "someip": [
+      {
+        "name": "Provider_GearSensor2MainApp_1",
+        "service": "GearSensor2MainApp",
+        "instance-id": 1,
+        "sd-server-config": {
+          "initial-delay-min": 0.01,
+          "initial-delay-max": 0.1,
+          "repetition-base-delay": 0.2,
+          "repetition-max": 3,
+          "offer-cyclic-delay": 0.5,
+          "request-response-delay-min": 0,
+          "request-response-delay-max": 0,
+          "ttl": 16777215
+        },
+        "provided-event-groups": [
+          {
+            "event-group": "EG_GetVehicleStatus_Event",
+            "multicast-threshold": 0,
+            "ipv4-multicast-address": "",
+            "ipv6-multicast-address": "",
+            "multicast-udp-port": 0,
+            "request-response-delay-min": 0,
+            "request-response-delay-max": 0
+          }
+        ]
+      },
+      {
+        "name": "Provider_MainApp2IVI_1",
+        "service": "MainApp2IVI",
+        "instance-id": 1,
+        "sd-server-config": {
+          "initial-delay-min": 0.01,
+          "initial-delay-max": 0.1,
+          "repetition-base-delay": 0.2,
+          "repetition-max": 3,
+          "offer-cyclic-delay": 0.5,
+          "request-response-delay-min": 0,
+          "request-response-delay-max": 0,
+          "ttl": 16777215
+        },
+        "provided-event-groups": [
+          {
+            "event-group": "EG_SendVehStatusEvent",
+            "multicast-threshold": 0,
+            "ipv4-multicast-address": "",
+            "ipv6-multicast-address": "",
+            "multicast-udp-port": 0,
+            "request-response-delay-min": 0,
+            "request-response-delay-max": 0
+          }
+        ]
+      }
+    ],
+    "dds": []
+  },
+  "service-consumers": {
+    "someip": [
+      {
+        "name": "Consumer_MainApp2IVI_1",
+        "service": "MainApp2IVI",
+        "required-instance-id": 65535,
+        "sd-client-config": {
+          "initial-delay-min": 0.01,
+          "initial-delay-max": 0.1,
+          "repetition-base-delay": 0.2,
+          "repetition-max": 3,
+          "ttl": 16777215
+        },
+        "required-event-groups": [
+          {
+            "event-group": "EG_SendVehStatusEvent",
+            "ttl": 16777215,
+            "request-response-delay-min": 0,
+            "request-response-delay-max": 0,
+            "retry-delay": 0.5,
+            "retry-max": 3
+          }
+        ]
+      },
+      {
+        "name": "Consumer_GearSensor2MainApp_1",
+        "service": "GearSensor2MainApp",
+        "required-instance-id": 65535,
+        "sd-client-config": {
+          "initial-delay-min": 0.01,
+          "initial-delay-max": 0.1,
+          "repetition-base-delay": 0.2,
+          "repetition-max": 3,
+          "ttl": 16777215
+        },
+        "required-event-groups": [
+          {
+            "event-group": "EG_GetVehicleStatus_Event",
+            "ttl": 16777215,
+            "request-response-delay-min": 0,
+            "request-response-delay-max": 0,
+            "retry-delay": 0.5,
+            "retry-max": 3
+          }
+        ]
+      }
+    ],
+    "dds": []
+  }
+}

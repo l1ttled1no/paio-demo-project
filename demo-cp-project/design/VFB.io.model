@@ -1,0 +1,14 @@
+{
+  "version": "1.0.0",
+  "metadata": {
+    "name": "VFB",
+    "created": "2026-10-02T06:56:58.861Z",
+    "modified": "2026-10-02T06:56:58.861Z"
+  },
+  "compositions": [
+    {
+      "name": "System",
+      "prototypes": []
+    }
+  ]
+}

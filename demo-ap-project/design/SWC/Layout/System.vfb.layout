@@ -1,0 +1,25 @@
+{
+  "version": "1.0.0",
+  "composition-name": "System",
+  "canvas-viewport": {
+    "x": -549.3503490383537,
+    "y": -312.9143826738257,
+    "zoom": 1.6487212707001289
+  },
+  "boundary-port-positions": [],
+  "prototype-layouts": [
+    {
+      "name": "HPC_0",
+      "position": {
+        "x": 599,
+        "y": 427
+      },
+      "size": {
+        "width": 300,
+        "height": 200
+      },
+      "port-positions": []
+    }
+  ],
+  "interface-mapping-layouts": []
+}

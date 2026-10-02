@@ -1,0 +1,61 @@
+{
+  "$schema": "https://autosar.io/schemas/swc.schema.json",
+  "version": "1.0.0",
+  "name": "GearSensor",
+  "type": "adaptive-application",
+  "ports": [
+    {
+      "name": "PPort_0",
+      "direction": "provided",
+      "port-interface": "GearSensor2MainApp",
+      "port-interface-category": "service"
+    },
+    {
+      "name": "RPort_Logging_Gear",
+      "direction": "required",
+      "port-interface": "Logging_and_Tracing",
+      "port-interface-category": "log-and-trace"
+    }
+  ],
+  "internal-behavior": {
+    "runnable-entities": [],
+    "rte-events": [],
+    "canvas-size": {
+      "width": 201,
+      "height": 158
+    },
+    "port-positions": {
+      "PPort_0": {
+        "x": 0,
+        "y": 89
+      },
+      "RPort_Logging_Gear": {
+        "x": 152,
+        "y": 158
+      }
+    }
+  },
+  "executable": {
+    "name": "GearSensor",
+    "root-swc-prototype": "AA",
+    "version": "1.0.0",
+    "category": "APPLICATION_LEVEL",
+    "reporting-behavior": "REPORTS-EXECUTION-STATE"
+  },
+  "dlt-sink-mappings": [
+    {
+      "name": "GearSensor_AA_RPort_Logging_Gear",
+      "port-ref": "RPort_Logging_Gear",
+      "dlt-context-ref": "",
+      "instance-type": "log",
+      "position": {
+        "x": 116.30090832319415,
+        "y": 70.7138057145916
+      },
+      "size": {
+        "width": 80,
+        "height": 28
+      }
+    }
+  ]
+}

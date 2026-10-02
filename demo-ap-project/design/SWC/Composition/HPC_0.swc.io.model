@@ -1,0 +1,47 @@
+{
+  "$schema": "https://autosar.io/schemas/swc.schema.json",
+  "version": "1.0.0",
+  "name": "HPC_0",
+  "type": "composition",
+  "ports": [],
+  "prototypes": [
+    {
+      "name": "MainApp",
+      "swc-ref": "AdaptiveApplication/MainApp"
+    },
+    {
+      "name": "GearSensor",
+      "swc-ref": "AdaptiveApplication/GearSensor"
+    },
+    {
+      "name": "IVI",
+      "swc-ref": "AdaptiveApplication/IVIApp"
+    }
+  ],
+  "connectors": [
+    {
+      "name": "Assembly_GearSensor_PPort_0_MainApp_RPort_0",
+      "category": "assembly",
+      "provider": {
+        "prototype": "GearSensor",
+        "port": "PPort_0"
+      },
+      "requester": {
+        "prototype": "MainApp",
+        "port": "RPort_0"
+      }
+    },
+    {
+      "name": "Assembly_MainApp_PPort_0_IVI_RPort_0",
+      "category": "assembly",
+      "provider": {
+        "prototype": "MainApp",
+        "port": "PPort_0"
+      },
+      "requester": {
+        "prototype": "IVI",
+        "port": "RPort_0"
+      }
+    }
+  ]
+}

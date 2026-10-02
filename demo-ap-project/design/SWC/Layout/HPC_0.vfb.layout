@@ -1,0 +1,97 @@
+{
+  "version": "1.0.0",
+  "composition-name": "HPC_0",
+  "canvas-viewport": {
+    "x": -70,
+    "y": 9,
+    "zoom": 1
+  },
+  "composition-layout": {
+    "position": {
+      "x": 534,
+      "y": 250
+    },
+    "size": {
+      "width": 770,
+      "height": 546
+    }
+  },
+  "boundary-port-positions": [],
+  "prototype-layouts": [
+    {
+      "name": "MainApp",
+      "position": {
+        "x": 575,
+        "y": 467
+      },
+      "size": {
+        "width": 237,
+        "height": 177
+      },
+      "port-positions": [
+        {
+          "port": "PPort_0",
+          "x": 237,
+          "y": 137
+        },
+        {
+          "port": "RPort_0",
+          "x": 237,
+          "y": 40
+        },
+        {
+          "port": "RPort_Logging_MainApp",
+          "x": 200,
+          "y": 177
+        }
+      ]
+    },
+    {
+      "name": "GearSensor",
+      "position": {
+        "x": 978,
+        "y": 331
+      },
+      "size": {
+        "width": 201,
+        "height": 158
+      },
+      "port-positions": [
+        {
+          "port": "PPort_0",
+          "x": 0,
+          "y": 89
+        },
+        {
+          "port": "RPort_Logging_Gear",
+          "x": 152,
+          "y": 158
+        }
+      ]
+    },
+    {
+      "name": "IVI",
+      "position": {
+        "x": 983,
+        "y": 588
+      },
+      "size": {
+        "width": 198,
+        "height": 146
+      },
+      "port-positions": [
+        {
+          "port": "RPort_0",
+          "x": 0,
+          "y": 50
+        },
+        {
+          "port": "RPort_Logging_IVI",
+          "x": 198,
+          "y": 48
+        }
+      ]
+    }
+  ],
+  "interface-mapping-layouts": []
+}

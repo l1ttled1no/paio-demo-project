@@ -1,0 +1,81 @@
+{
+  "$schema": "https://autosar.io/schemas/signal.schema.json",
+  "version": "1.0.0",
+  "metadata": {
+    "name": "Signal Dictionary",
+    "created": "2026-09-29T17:58:08.118Z",
+    "modified": "2026-09-29T17:58:08.118Z"
+  },
+  "signals": {
+    "signals": [
+      {
+        "name": "MainApp2IVI_SendVehStatusEvent_ISignal",
+        "bit-length": 88,
+        "system-signal-name": "MainApp2IVI_SendVehStatusEvent_SystemSignal",
+        "type": "array",
+        "init-value": 0,
+        "factor": 1,
+        "offset": 0,
+        "min": 0,
+        "max": 0,
+        "derived-by": "cp-soa",
+        "derivation-key": "cp-soa:MainApp2IVI:SendVehStatusEvent:event",
+        "value-type": {
+          "base-type": "unsigned"
+        }
+      },
+      {
+        "name": "GearSensor2MainApp_GetVehicleStatus_Event_ISignal",
+        "bit-length": 88,
+        "system-signal-name": "GearSensor2MainApp_GetVehicleStatus_Event_SystemSignal",
+        "type": "array",
+        "init-value": 0,
+        "factor": 1,
+        "offset": 0,
+        "min": 0,
+        "max": 0,
+        "derived-by": "cp-soa",
+        "derivation-key": "cp-soa:GearSensor2MainApp:GetVehicleStatus_Event:event",
+        "value-type": {
+          "base-type": "unsigned"
+        }
+      }
+    ],
+    "text-tables": [],
+    "pdus": [
+      {
+        "name": "MainApp2IVI_SendVehStatusEvent_PDU",
+        "length": 11,
+        "unused-bit-pattern": 0,
+        "signals": [
+          {
+            "signal": "MainApp2IVI_SendVehStatusEvent_ISignal",
+            "start-bit-position": 0,
+            "byte-order": "little-endian"
+          }
+        ],
+        "derived-by": "cp-soa",
+        "derivation-key": "cp-soa:MainApp2IVI:SendVehStatusEvent:event"
+      },
+      {
+        "name": "GearSensor2MainApp_GetVehicleStatus_Event_PDU",
+        "length": 11,
+        "unused-bit-pattern": 0,
+        "signals": [
+          {
+            "signal": "GearSensor2MainApp_GetVehicleStatus_Event_ISignal",
+            "start-bit-position": 0,
+            "byte-order": "little-endian"
+          }
+        ],
+        "derived-by": "cp-soa",
+        "derivation-key": "cp-soa:GearSensor2MainApp:GetVehicleStatus_Event:event"
+      }
+    ],
+    "can-frames": [],
+    "lin-frames": [],
+    "flexray-frames": [],
+    "ethernet-frames": [],
+    "signal-groups": []
+  }
+}

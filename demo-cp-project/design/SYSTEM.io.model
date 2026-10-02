@@ -1,0 +1,18 @@
+{
+  "version": "1.0.0",
+  "metadata": {
+    "name": "SystemModel",
+    "created": "2026-10-02T06:56:58.861Z",
+    "modified": "2026-10-02T06:56:58.861Z"
+  },
+  "system": {
+    "name": "System",
+    "version": "1.0.0",
+    "description": "",
+    "root-sw-composition": "System",
+    "ecus": [],
+    "system-mapping": {
+      "swc-ecu-mappings": []
+    }
+  }
+}
